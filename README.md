@@ -141,5 +141,5 @@ You can deploy it on:
 ## 👨‍💻 Built By
 
 **GeeksForCode**
-Call2Code Hackathon 2025 Finalist
+Call2Code Hackathon 2025 
 AI-Enhanced Monitoring Champion 🧠
