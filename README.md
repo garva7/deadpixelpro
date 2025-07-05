@@ -16,7 +16,7 @@ DeadPixel is a **real-time API failure tracker and visual monitor** built for de
 
 ![DeadPixel Screenshot 2](https://github.com/Chinmayykashyap-git/DeadPixel/blob/06b5394507fbb73bd9c2019b55eb41f4e944eea1/Screenshot%202025-07-05%20225425.png)
 
-### 🧠 AI Insights for API Errors
+### 🧠 Light Mode (using the toggle theme button)
 
 ![DeadPixel Screenshot 3](https://github.com/Chinmayykashyap-git/DeadPixel/blob/06b5394507fbb73bd9c2019b55eb41f4e944eea1/Screenshot%202025-07-05%20225448.png)
 
