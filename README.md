@@ -140,6 +140,5 @@ You can deploy it on:
 
 ## 👨‍💻 Built By
 
-**GeeksForCode**
+**GeeksForCode** 🧠
 Call2Code Hackathon 2025 
-AI-Enhanced Monitoring Champion 🧠
