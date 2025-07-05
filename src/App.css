@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #00ffcc;
+  font-family: 'Press Start 2P', cursive;
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  background-image: 
+    linear-gradient(90deg, rgba(0, 255, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(rgba(255, 0, 255, 0.12) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-repeat: repeat;
+}
+
+body.light {
+  background-color: #f9f9f9;
+  color: #111;
+  font-family: 'Inter', sans-serif;
+  background-image: 
+    linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+}
+
+.App {
+  text-align: center;
+  padding: 2rem;
+}
+
+.title-glow {
+  font-size: 2.2rem;
+  color: #ff00ff;
+  animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+  0%   { text-shadow: 2px 0 red, -2px 0 cyan; }
+  20%  { text-shadow: -2px 0 red, 2px 0 cyan; }
+  40%  { text-shadow: 2px 2px red, -2px -2px cyan; }
+  60%  { text-shadow: -2px 2px red, 2px -2px cyan; }
+  80%  { text-shadow: 0 0 red, 0 0 cyan; }
+  100% { text-shadow: 2px 0 red, -2px 0 cyan; }
+}
+
+.chat-box {
+  margin: 1rem auto;
+  padding: 1rem;
+  background-color: #111;
+  color: #0ff;
+  border: 2px solid #0ff;
+  max-width: 600px;
+  font-size: 0.7rem;
+}
+
+body.light .chat-box {
+  background-color: #ffffff;
+  border-color: #bbb;
+  color: #111;
+  font-size: 0.8rem;
+}
+
+button {
+  margin: 0.5rem;
+  padding: 0.6rem 1rem;
+  font-family: 'Press Start 2P', cursive;
+  background-color: #00ffcc;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 0.6rem;
+}
+
+button:hover {
+  background-color: #00ccaa;
+  transform: scale(1.05);
+}
+
+body.light button {
+  background-color: #111;
+  color: #fff;
+  font-size: 0.7rem;
+}
+
+body.light button:hover {
+  background-color: #333;
+}
+
+.status {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.card {
+  background-color: #111;
+  padding: 1rem;
+  width: 250px;
+  text-align: left;
+  color: #fff;
+  transition: transform 0.2s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.card.alive {
+  border: 2px dashed #00ffcc;
+}
+
+.card.dead {
+  border: 2px dashed red;
+  background-color: #330000;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card h3 {
+  color: #00ffff;
+  font-size: 0.8rem;
+}
+
+.card p {
+  font-size: 0.6rem;
+  color: #b3f5f5;
+}
+
+.card small {
+  font-size: 0.5rem;
+  color: #888;
+}
+
+body.light .card.alive {
+  background-color: #ffffff;
+  color: #111;
+  border-color: #ccc;
+}
+
+body.light .card.dead {
+  background-color: #fff0f0;
+  color: #111;
+  border-color: #e88;
+}
+
+body.light .card h3 {
+  color: #333;
+  font-size: 0.9rem;
+}
+
+body.light .card p {
+  color: #444;
+  font-size: 0.7rem;
+}
+
+body.light .card small {
+  color: #666;
+  font-size: 0.6rem;
+}
+
+footer {
+  margin-top: 3rem;
+  font-size: 0.6rem;
+  color: #999;
+}
+
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  margin: 10px;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #888;
+  transition: 0.4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-image: url("https://i.imgur.com/UBKQ7JL.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #00ffcc;
+}
+
+input:checked + .slider:before {
+  transform: translateX(30px);
+}
+
+/* ✅ Timeline Log Styles */
+
+.timeline {
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 1px dashed #00ffcc;
+  background-color: rgba(0, 255, 204, 0.05);
+  max-height: 300px;
+  overflow-y: auto;
+  font-size: 0.7rem;
+  line-height: 1.5;
+  text-align: left;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.timeline h3 {
+  margin-bottom: 0.8rem;
+  color: #00ffcc;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.timeline-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.2rem 0;
+  border-bottom: 1px dotted #00ffcc;
+}
+
+.timeline-item .time {
+  color: #999;
+  font-weight: bold;
+  margin-right: 1rem;
+  min-width: 60px;
+}
+
+.timeline-item .event {
+  color: #fff;
+  flex: 1;
+  font-size: 0.65rem;
+}
+
+body.light .timeline {
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+body.light .timeline h3 {
+  color: #111;
+}
+
+body.light .timeline-item {
+  border-color: #ccc;
+}
+
+body.light .timeline-item .time {
+  color: #666;
+}
+
+body.light .timeline-item .event {
+  color: #111;
+}
+.timeline {
+  margin-top: 2rem;
+  background-color: #111;
+  padding: 1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #0ff;
+  font-size: 0.6rem;
+  text-align: left;
+  border: 2px solid #0ff;
+}
+
+.timeline-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3rem 0;
+}
+
+.timeline-item .time {
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+.timeline-item .event {
+  flex: 1;
+  color: #aaa;
+}
+
+body.light .timeline {
+  background-color: #fff;
+  border-color: #ccc;
+  color: #111;
+}
+
+body.light .timeline-item .event {
+  color: #333;
+}
+
+body.light .timeline-item .time {
+  color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
